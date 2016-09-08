@@ -28,8 +28,8 @@ unsigned int sub(unsigned int a, unsigned int b)
 /**********************************************************************
  * @Description         This is the transfer function
  * @param domain1       Domain of 4-bit abstract values
- *                      domain.first is the low bit
- *                      domain.second is the high bit
+ *                      domain.first is the low bit, should be 0~15
+ *                      domain.second is the high bit, should be 0~15
  * @param domain2       The same data structure as domain1
  *
  * @return              The data set of domain1 - domain2
