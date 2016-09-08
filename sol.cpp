@@ -28,20 +28,22 @@ unsigned int sub(unsigned int a, unsigned int b)
 /**********************************************************************
  * 
  * @Description         This is the transfer function
- * @param domain        Domain of 4-bit abstract values
+ * @param domain1       Domain of 4-bit abstract values
  *                      domain.first is the low bit
  *                      domain.second is the high bit
+ * @param domain2       The same data structure as domain1
  *
- * @return              The data set of the substraction
+ * @return              The data set of domain1 - domain2
  *********************************************************************/
-set<unsigned int> transferFunc(pair<unsigned int, unsigned int> domain)
+set<unsigned int> transferFunc(pair<unsigned int, unsigned int> domain1, pair<unsigned int, unsigned int> domain2)
 {
-    unsigned int start = domain.first, end = domain.second;
+    unsigned int start1 = domain1.first, end1 = domain1.second;
+    unsigned int start2 = domain2.first, end2 = domain2.second;
     set<unsigned int> st;
 
-    for(unsigned int i = start; i <= end; ++i)
+    for(unsigned int i = start1; i <= end1; ++i)
     {
-        for(unsigned int j = start; j <= end; ++j)
+        for(unsigned int j = start2; j <= end2; ++j)
         {
             st.insert(sub(i, j));
         }
@@ -53,7 +55,7 @@ set<unsigned int> transferFunc(pair<unsigned int, unsigned int> domain)
 /* Test case */
 int main()
 {
-    set<unsigned int> result = transferFunc(make_pair<unsigned int, unsigned int>(0, 15));
+    set<unsigned int> result = transferFunc(make_pair<unsigned int, unsigned int>(0, 15), make_pair<unsigned int, unsigned int>(0, 15));
     for(auto iter = result.begin(); iter != result.end(); ++iter)
     {
         cout << *iter << ", ";
