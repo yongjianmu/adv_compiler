@@ -26,7 +26,6 @@ unsigned int sub(unsigned int a, unsigned int b)
 }
 
 /**********************************************************************
- * 
  * @Description         This is the transfer function
  * @param domain1       Domain of 4-bit abstract values
  *                      domain.first is the low bit
